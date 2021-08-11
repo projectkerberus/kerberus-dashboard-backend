@@ -1,12 +1,12 @@
 # Kerberus Dashboard Backend
 
-Preinstalled plugins
+### Preinstalled plugins
 
 ```
 - Kubernetes
 ```
 
-Sample docker-compose.yaml
+### Sample docker-compose.yaml
 
 ```
 version: '3.7'
@@ -26,3 +26,9 @@ services:
     ports:
       - 7000:7000
 ```
+
+### CI - Build/Deploy
+
+Automatic build and deploy start only when you push new tag.
+
+> Version in package.json **must** follow the tag of the push.
