@@ -3,7 +3,7 @@ name: Push Image to Docker hub
 on:
   push:
     tags:
-      - v*
+      - "*"
 
 env:
   IMAGE_NAME: kerberus-dashboard-backend
