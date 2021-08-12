@@ -6,6 +6,7 @@ RUN yarn
 RUN yarn build
 
 FROM node:14-buster-slim
+WORKDIR /app
 COPY --from=react-build /app/packages/backend/dist/skeleton.tar.gz /app/package.json ./
 COPY --from=react-build /app/packages/app/package.json ./packages/app/package.json
 RUN tar xzf skeleton.tar.gz && rm skeleton.tar.gz
