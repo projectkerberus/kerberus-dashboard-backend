@@ -1,4 +1,15 @@
-FROM node:14-alpine as react-build
+FROM node:14-buster
+
+WORKDIR /usr/src/app
+
+RUN cd /tmp && curl -O https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz && \
+  tar -xvf Python-3.8.2.tar.xz && \
+  cd Python-3.8.2 && \
+  ./configure --enable-optimizations && \
+  make -j 4 && \
+  make altinstall
+
+RUN pip3.8 install cookiecutter
 
 WORKDIR /app
 COPY . ./
