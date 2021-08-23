@@ -31,12 +31,12 @@ export const createArgoCDAction = () => {
       const repo = url.searchParams.get("repo")
       const base = url.origin
 
-      ctx.logger.info(`Creating application on ArgoCD whit this params`);
+      ctx.logger.info(`Creating application on ArgoCD whit this params:`);
       ctx.logger.info(`- RepoUrl: ${base}/${owner}/${repo}.git`);
       ctx.logger.info(`- Namespace: ${repo}`);
 
       await axiosInstance.post(
-        `https://argocd-server.argo-system.svc/api/v1/applications`,
+        `http://argocd-server.argo-system.svc/api/v1/applications`,
         {
             "metadata": {
                 "name": repo
