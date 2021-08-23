@@ -43,9 +43,13 @@ integrations:
     #   token: ${GHE_TOKEN}
 
 proxy:
-  "/test":
-    target: "https://example.com"
+  "/argocd/api":
+    target: https://argocd.projectx.kiratech.net
     changeOrigin: true
+    secure: false
+    headers:
+      Cookie:
+        $env: ARGOCD_AUTH_TOKEN
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs

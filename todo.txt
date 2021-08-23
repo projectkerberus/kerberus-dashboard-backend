@@ -1,0 +1,6 @@
+url uso il proxy
+in env c'è il token ARGOCD_AUTH_TOKEN
+
+
+
+$github.com?owner=maurosala&repo=pluto4
