@@ -31,37 +31,38 @@ export const createArgoCDAction = () => {
       const repo = url.searchParams.get("repo")
       const base = url.origin
 
-      ctx.logger.info(`Creating application on ArgoCD whit this params:`);
-      ctx.logger.info(`- RepoUrl: ${base}/${owner}/${repo}.git`);
-      ctx.logger.info(`- Namespace: ${repo}`);
+      const payload = {
+        "metadata": {
+            "name": repo
+        },
+        "spec": {
+            "source": {
+                "repoURL": `${base}/${owner}/${repo}.git`,
+                "path": "charts/"
+            },
+            "destination": {
+                "namespace": repo,
+                "server": "https://kubernetes.default.svc"
+            },
+            "syncPolicy": {
+                "syncOptions": [
+                    "CreateNamespace=true"
+                ],
+                "automated": {
+                    "allowEmpty": true,
+                    "prune": false,
+                    "selfHeal": false
+                }
+            }
+        }
+    }
+
+      ctx.logger.info(`Creating application on ArgoCD whit this payload:`);
+      ctx.logger.info(`${JSON.stringify(payload, null, 4)}`);
 
       await axiosInstance.post(
         `http://argocd-server.argo-system.svc/api/v1/applications`,
-        {
-            "metadata": {
-                "name": repo
-            },
-            "spec": {
-                "source": {
-                    "repoURL": `${base}/${owner}/${repo}.git`,
-                    "path": "charts/"
-                },
-                "destination": {
-                    "namespace": repo,
-                    "server": "https://kubernetes.default.svc"
-                },
-                "syncPolicy": {
-                    "syncOptions": [
-                        "CreateNamespace=true"
-                    ],
-                    "automated": {
-                        "allowEmpty": true,
-                        "prune": false,
-                        "selfHeal": false
-                    }
-                }
-            }
-        }, {
+        payload, {
           headers: {
             'Content-Type': 'application/json',
             'Cookie': `${process.env.ARGOCD_AUTH_TOKEN}`
