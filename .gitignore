@@ -1,6 +1,7 @@
 _app-config.yaml
 __app-config.yaml
 todo.txt
+.dccache
 
 # macOS
 .DS_Store
