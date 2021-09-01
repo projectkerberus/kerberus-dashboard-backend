@@ -33,6 +33,7 @@
     "@backstage/plugin-techdocs-backend": "^0.10.0",
     "@gitbeaker/node": "^32.2.0",
     "@octokit/rest": "^18.9.1",
+    "@roadiehq/backstage-plugin-argo-cd": "^1.0.10",
     "axios": "^0.21.1",
     "dockerode": "^3.3.0",
     "express": "^4.17.1",

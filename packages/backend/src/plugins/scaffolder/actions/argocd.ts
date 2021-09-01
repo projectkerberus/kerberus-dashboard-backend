@@ -58,16 +58,16 @@ export const createArgoCDAction = () => {
       ctx.logger.info(`Creating application on ArgoCD whit this payload:`);
       ctx.logger.info(`${JSON.stringify(payload, null, 4)}`);
 
-      // await axiosInstance.post(
-      //   `http://argocd-server.argo-system.svc/api/v1/applications`,
-      //   payload,
-      //   {
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //       Cookie: `${process.env.ARGOCD_AUTH_TOKEN}`,
-      //     },
-      //   },
-      // );
+      await axiosInstance.post(
+        `http://argocd-server.argo-system.svc/api/v1/applications`,
+        payload,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Cookie: `${process.env.ARGOCD_AUTH_TOKEN}`,
+          },
+        },
+      );
       ctx.logger.info(`Application created successfully! 👍`);
     },
   });

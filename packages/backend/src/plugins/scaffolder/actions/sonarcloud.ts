@@ -8,18 +8,13 @@ export const createSonarCloudAction = () => {
     id: 'kerberus:sonarcloud',
     schema: {
       input: {
-        required: ['host', 'component_id'],
+        required: ['host'],
         type: 'object',
         properties: {
           host: {
             type: 'string',
             title: 'Host',
             description: 'Host',
-          },
-          component_id: {
-            type: 'string',
-            title: 'Component Id',
-            description: 'Component Id',
           },
         },
       },
