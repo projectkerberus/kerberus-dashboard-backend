@@ -21,10 +21,10 @@ backend:
   database:
     client: pg
     connection:
-      host: localhost
-      port: 5432
-      user: maurosala
-      password:
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
       # https://node-postgres.com/features/ssl
       #ssl: require # see https://www.postgresql.org/docs/current/libpq-ssl.html Table 33.1. SSL Mode Descriptions (e.g. require)
       #ca: # if you have a CA file and want to verify it you can uncomment this section
@@ -36,7 +36,7 @@ backend:
 integrations:
   github:
     - host: github.com
-      token: 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
+      token: ${GITHUB_TOKEN}
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
@@ -44,7 +44,7 @@ integrations:
 
 proxy:
   "/argocd/api":
-    target: https://argocd.projectx.kiratech.net/api/v1/
+    target: https://argocd.projectx.kiratech.net
     changeOrigin: true
     secure: false
     headers:
@@ -67,13 +67,9 @@ auth:
   providers:
     microsoft:
       development:
-        clientId: f55a8d66-e554-4e0f-b7c0-4f0326451e04
-        clientSecret: h5nziLF4wG4.~tkb1l6V~2I01~zb-_A7iW
-        tenantId: 0491023f-93a0-4ee2-a9e8-42b5ba8a3f53
-    github:
-      development:
-        clientId: 5b1a1dfe4442b562b8a4
-        clientSecret: f1eb3b20d582c158d0dd1eeb268403895b0c7aa8
+        clientId: ${AUTH_MICROSOFT_CLIENT_ID}
+        clientSecret: ${AUTH_MICROSOFT_CLIENT_SECRET}
+        tenantId: ${AUTH_MICROSOFT_TENANT_ID}
 
 scaffolder:
   github:
@@ -81,26 +77,6 @@ scaffolder:
     visibility: public # or 'internal' or 'private'
 
 catalog:
-  processors:
-    microsoftGraphOrg:
-      providers:
-        - target: https://graph.microsoft.com/v1.0
-          authority: https://login.microsoftonline.com
-          # If you don't know you tenantId, you can use Microsoft Graph Explorer
-          # to query it
-          tenantId: 0491023f-93a0-4ee2-a9e8-42b5ba8a3f53
-          # Client Id and Secret can be created under Certificates & secrets in
-          # the App registration in the Microsoft Azure Portal.
-          clientId: f55a8d66-e554-4e0f-b7c0-4f0326451e04
-          clientSecret: h5nziLF4wG4.~tkb1l6V~2I01~zb-_A7iW
-          # Optional filter for user, see Microsoft Graph API for the syntax
-          # See https://docs.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-1.0#properties
-          # and for the syntax https://docs.microsoft.com/en-us/graph/query-parameters#filter-parameter
-          userFilter: accountEnabled eq true
-          # Optional filter for group, see Microsoft Graph API for the syntax
-          # See https://docs.microsoft.com/en-us/graph/api/resources/group?view=graph-rest-1.0#properties
-          groupFilter: securityEnabled eq false
-
   rules:
     - allow: [Component, System, API, Group, User, Resource, Location]
   locations:
@@ -136,16 +112,10 @@ catalog:
     #   target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/docs-template/template.yaml
     #   rules:
     #     - allow: [Template]
-    # - type: url
-    #   target: https://github.com/projectkerberus/gcp-stack-template/blob/main/template-beta.yaml
-    #   rules:
-    #     - allow: [Template]
-    - type: microsoft-graph-org
-      target: https://graph.microsoft.com/v1.0
-      # If you catalog doesn't allow to import Group and User entities by
-      # default, allow them here
+    - type: url
+      target: https://github.com/projectkerberus/gcp-stack-template/blob/main/template-beta.yaml
       rules:
-        - allow: [Group, User]
+        - allow: [Template]
 
 kubernetes:
   serviceLocatorMethod:
