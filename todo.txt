@@ -4,3 +4,13 @@ in env c'è il token ARGOCD_AUTH_TOKEN
 
 
 $github.com?owner=maurosala&repo=pluto4
+
+GITHUB_TOKEN
+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
+
+
+AZURE
+value: h5nziLF4wG4.~tkb1l6V~2I01~zb-_A7iW
+secretid: bda6c3b8-9f2b-46f0-9f55-b9aec400bb61
+tenantid: 0491023f-93a0-4ee2-a9e8-42b5ba8a3f53
+clientid: f55a8d66-e554-4e0f-b7c0-4f0326451e04

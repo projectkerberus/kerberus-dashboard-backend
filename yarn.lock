@@ -191,7 +191,7 @@
   dependencies:
     tslib "^2.0.0"
 
-"@azure/msal-common@^4.0.0":
+"@azure/msal-common@^4.0.0", "@azure/msal-common@^4.5.0":
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/@azure/msal-common/-/msal-common-4.5.1.tgz#f35af8b634ae24aebd0906deb237c0db1afa5826"
   integrity sha512-/i5dXM+QAtO+6atYd5oHGBAx48EGSISkXNXViheliOQe+SIFMDo3gSq3lL54W0suOSAsVPws3XnTaIHlla0PIQ==
@@ -204,6 +204,16 @@
   integrity sha512-ZQI11Uz1j0HJohb9JZLRD8z0moVcPks1AFW4Q/Gcl67+QvH4aKEJti7fjCcipEEZYb/qzLSO8U6IZgPYytsiJQ==
   dependencies:
     "@azure/msal-common" "^4.0.0"
+    axios "^0.21.1"
+    jsonwebtoken "^8.5.1"
+    uuid "^8.3.0"
+
+"@azure/msal-node@^1.1.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@azure/msal-node/-/msal-node-1.3.0.tgz#1d0ce890042eb3898745f5a0e611b766d6f00071"
+  integrity sha512-BM5S5sMB6N0aPux4l85NnRNO/5/G+w3oT+JtLbMDBsc/aUxLVYoWMmxVECrYzlQRm5QZzFWRo04Rv5AnAF7z2g==
+  dependencies:
+    "@azure/msal-common" "^4.5.0"
     axios "^0.21.1"
     jsonwebtoken "^8.5.1"
     uuid "^8.3.0"
@@ -1508,25 +1518,6 @@
   dependencies:
     lodash "^4.17.15"
 
-"@backstage/core-app-api@^0.1.4":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@backstage/core-app-api/-/core-app-api-0.1.10.tgz#3c4fd051836065b165bd602519ca1de865938191"
-  integrity sha512-pDvcRScF8npLVE6YNUPhjWIycvP4uc1c25zf6Ry3tcgRXaFIgyttLNpqZbJysCeUgXXd3f5RQTH1fi1YW04BOA==
-  dependencies:
-    "@backstage/config" "^0.1.8"
-    "@backstage/core-components" "^0.3.3"
-    "@backstage/core-plugin-api" "^0.1.6"
-    "@backstage/theme" "^0.2.10"
-    "@material-ui/core" "^4.12.2"
-    "@material-ui/icons" "^4.9.1"
-    "@types/prop-types" "^15.7.3"
-    "@types/react" "*"
-    prop-types "^15.7.2"
-    react "^16.12.0"
-    react-router-dom "6.0.0-beta.0"
-    react-use "^17.2.4"
-    zen-observable "^0.8.15"
-
 "@backstage/core-app-api@^0.1.6", "@backstage/core-app-api@^0.1.7":
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/@backstage/core-app-api/-/core-app-api-0.1.7.tgz#77f2151411d69dd46a2fab6410faf9e81db27326"
@@ -1610,51 +1601,6 @@
     remark-gfm "^1.0.0"
     zen-observable "^0.8.15"
 
-"@backstage/core-components@^0.3.1", "@backstage/core-components@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.3.3.tgz#ec63eac6d789303f90219857849fa1cefe4e0dde"
-  integrity sha512-u75+YiXu33NHSFT5MqTgY+uqtxyye4Tmy3I7D21wLUgeW6aFhmS1IUBGckCqv8UG1nqZS7gBmJLccm88tDsJaA==
-  dependencies:
-    "@backstage/config" "^0.1.8"
-    "@backstage/core-plugin-api" "^0.1.6"
-    "@backstage/errors" "^0.1.1"
-    "@backstage/theme" "^0.2.10"
-    "@material-table/core" "^3.1.0"
-    "@material-ui/core" "^4.12.2"
-    "@material-ui/icons" "^4.9.1"
-    "@material-ui/lab" "4.0.0-alpha.45"
-    "@testing-library/react-hooks" "^3.4.2"
-    "@types/dagre" "^0.7.44"
-    "@types/prop-types" "^15.7.3"
-    "@types/react" "*"
-    "@types/react-sparklines" "^1.7.0"
-    "@types/react-text-truncate" "^0.14.0"
-    classnames "^2.2.6"
-    clsx "^1.1.0"
-    d3-selection "^2.0.0"
-    d3-shape "^2.0.0"
-    d3-zoom "^2.0.0"
-    dagre "^0.8.5"
-    immer "^9.0.1"
-    lodash "^4.17.15"
-    pluralize "^8.0.0"
-    prop-types "^15.7.2"
-    qs "^6.9.4"
-    rc-progress "^3.0.0"
-    react "^16.12.0"
-    react-dom "^16.12.0"
-    react-helmet "6.1.0"
-    react-hook-form "^6.15.4"
-    react-markdown "^5.0.2"
-    react-router "6.0.0-beta.0"
-    react-router-dom "6.0.0-beta.0"
-    react-sparklines "^1.7.0"
-    react-syntax-highlighter "^15.4.3"
-    react-text-truncate "^0.16.0"
-    react-use "^17.2.4"
-    remark-gfm "^1.0.0"
-    zen-observable "^0.8.15"
-
 "@backstage/core-components@^0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.3.2.tgz#fcdb1179e3186f0d7a19eadfee62c7e32bddfbc2"
@@ -1700,22 +1646,6 @@
     remark-gfm "^1.0.0"
     zen-observable "^0.8.15"
 
-"@backstage/core-plugin-api@^0.1.3", "@backstage/core-plugin-api@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@backstage/core-plugin-api/-/core-plugin-api-0.1.6.tgz#d636839ee3eb5f663908f13064dbed10a61a289c"
-  integrity sha512-CG4Csyz4MtL2F9FjgIJnqSCD6XiqDhh06r3LIoslVKyBVNl9F9IEC0ntJDiCdzKLScWQxqhS2Vv/R6V6Y8eK9A==
-  dependencies:
-    "@backstage/config" "^0.1.6"
-    "@backstage/theme" "^0.2.9"
-    "@material-ui/core" "^4.12.2"
-    "@types/react" "*"
-    history "^5.0.0"
-    prop-types "^15.7.2"
-    react "^16.12.0"
-    react-router-dom "6.0.0-beta.0"
-    react-use "^17.2.4"
-    zen-observable "^0.8.15"
-
 "@backstage/core-plugin-api@^0.1.4", "@backstage/core-plugin-api@^0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@backstage/core-plugin-api/-/core-plugin-api-0.1.5.tgz#f25a5bd4e62a44d465490c4d1c8007092d9895b7"
@@ -1725,6 +1655,22 @@
     "@backstage/theme" "^0.2.9"
     "@material-ui/core" "^4.12.2"
     "@types/react" "^16.9"
+    history "^5.0.0"
+    prop-types "^15.7.2"
+    react "^16.12.0"
+    react-router-dom "6.0.0-beta.0"
+    react-use "^17.2.4"
+    zen-observable "^0.8.15"
+
+"@backstage/core-plugin-api@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@backstage/core-plugin-api/-/core-plugin-api-0.1.6.tgz#d636839ee3eb5f663908f13064dbed10a61a289c"
+  integrity sha512-CG4Csyz4MtL2F9FjgIJnqSCD6XiqDhh06r3LIoslVKyBVNl9F9IEC0ntJDiCdzKLScWQxqhS2Vv/R6V6Y8eK9A==
+  dependencies:
+    "@backstage/config" "^0.1.6"
+    "@backstage/theme" "^0.2.9"
+    "@material-ui/core" "^4.12.2"
+    "@types/react" "*"
     history "^5.0.0"
     prop-types "^15.7.2"
     react "^16.12.0"
@@ -1869,7 +1815,23 @@
     winston "^3.2.1"
     yn "^4.0.0"
 
-"@backstage/plugin-catalog-backend@^0.13.5":
+"@backstage/plugin-catalog-backend-module-msgraph@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-backend-module-msgraph/-/plugin-catalog-backend-module-msgraph-0.2.3.tgz#00505b9fe2b44add68dd1c45320c73a5cd770668"
+  integrity sha512-tcp0GwbnxaE1kIQVEWs0t50FLafhlLe1CnXOwtHtSzZJoBIz59iUYLyIoQgNh14Mt9X6MEqKCFbNE9GDBTrMIw==
+  dependencies:
+    "@azure/msal-node" "^1.1.0"
+    "@backstage/catalog-model" "^0.9.0"
+    "@backstage/config" "^0.1.7"
+    "@backstage/plugin-catalog-backend" "^0.13.3"
+    "@microsoft/microsoft-graph-types" "^1.25.0"
+    cross-fetch "^3.0.6"
+    lodash "^4.17.15"
+    p-limit "^3.0.2"
+    qs "^6.9.4"
+    winston "^3.2.1"
+
+"@backstage/plugin-catalog-backend@^0.13.3", "@backstage/plugin-catalog-backend@^0.13.5":
   version "0.13.5"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-backend/-/plugin-catalog-backend-0.13.5.tgz#9cd2fe86baea0c67dc759237c494762fe88ac190"
   integrity sha512-bUkc7lWNAwlB60GumDeOSKxIlkKTwH1BC5z7eeEBYdGZPtZdBcZT37QYOwsJmKs2p1LcQXKqkC9bfPQExQx9zA==
@@ -2430,7 +2392,7 @@
     react-router-dom "6.0.0-beta.0"
     zen-observable "^0.8.15"
 
-"@backstage/theme@^0.2.10", "@backstage/theme@^0.2.8":
+"@backstage/theme@^0.2.10":
   version "0.2.10"
   resolved "https://registry.yarnpkg.com/@backstage/theme/-/theme-0.2.10.tgz#5a87c76600951b8d97476c9b87e191ebd5a71e9b"
   integrity sha512-YPfjpgtZp1I6jMZ2V0JG/9UzbdF5zqzNoJytHtldB4MqtrQUm7UPZyrNbintLW96LOVqwfMnzjGXztT5tO46Tg==
@@ -3669,7 +3631,7 @@
     react-double-scrollbar "0.0.15"
     uuid "^3.4.0"
 
-"@material-ui/core@^4.11.0", "@material-ui/core@^4.12.2":
+"@material-ui/core@^4.12.2":
   version "4.12.3"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.12.3.tgz#80d665caf0f1f034e52355c5450c0e38b099d3ca"
   integrity sha512-sdpgI/PL56QVsEJldwEe4FFaFTLUqN+rd7sSZiRCdx2E/C7z5yK0y/khAWVBH24tXwto7I1hCzNWfJGZIYJKnw==
@@ -3769,6 +3731,11 @@
   integrity sha512-oKuFCQFa3W7Hj7zKn0+4ypI8JFm4ZKIoncwAC6wd5WwFW2sL7O1hpPoJdSWpynQ4DJ4lQ6MvFoVDmCLilonDFg==
   dependencies:
     "@types/whatwg-streams" "^0.0.7"
+
+"@microsoft/microsoft-graph-types@^1.25.0":
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/@microsoft/microsoft-graph-types/-/microsoft-graph-types-1.41.0.tgz#669113391f4efb02e888a8a3349e4e3d6d25ba35"
+  integrity sha512-GNGqnN3k4wo6zlxszBUdrzEXMQMeTRXRO2OP3h63LNbqRrRHUe6WY2EbGwL7gUhap7pOoyziZ+eG5YUvUNdBSA==
 
 "@mswjs/cookies@^0.1.5":
   version "0.1.6"
@@ -4170,34 +4137,6 @@
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@rjsf/material-ui/-/material-ui-3.0.0.tgz#69ece2cb549f0e860b5f89898db90edcc95b15ba"
   integrity sha512-T2B8QnrDQphbFNxDz7baAa0zTd5TXJmO9soHBPTKKdniRbMEOQ19AJBbZkA3ED2XZa/xrUY/6XjERQLpNACddw==
-
-"@roadiehq/backstage-plugin-argo-cd@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@roadiehq/backstage-plugin-argo-cd/-/backstage-plugin-argo-cd-1.0.10.tgz#03cb28509d0ee244b23e320bb817ae4345f82c1d"
-  integrity sha512-WE9ZWcDOZFeVegejRojWc99leQGr0n7OP2bwciIMqqDJj2pTGvFm48VnrPgR8cuUzlZBmULiMBZcxKkH6oADhA==
-  dependencies:
-    "@backstage/catalog-model" "^0.9.0"
-    "@backstage/core-app-api" "^0.1.4"
-    "@backstage/core-components" "^0.3.1"
-    "@backstage/core-plugin-api" "^0.1.3"
-    "@backstage/plugin-catalog-react" "^0.4.1"
-    "@backstage/theme" "^0.2.8"
-    "@material-ui/core" "^4.11.0"
-    "@material-ui/icons" "^4.9.1"
-    "@material-ui/lab" "4.0.0-alpha.45"
-    cross-fetch "^3.1.4"
-    date-fns "^2.21.1"
-    fp-ts "^2.10.0"
-    history "^5.0.0"
-    io-ts "^2.2.16"
-    io-ts-promise "^2.0.2"
-    io-ts-reporters "^1.2.2"
-    moment "^2.29.1"
-    react "^16.13.1"
-    react-dom "^16.13.1"
-    react-router "6.0.0-beta.0"
-    react-router-dom "6.0.0-beta.0"
-    react-use "^17.2.4"
 
 "@rollup/plugin-commonjs@^17.1.0":
   version "17.1.0"
@@ -8303,7 +8242,7 @@ date-and-time@^1.0.0:
   resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-1.0.1.tgz#4959b7faf1ec5873e59d926d4528b9223a808a57"
   integrity sha512-7u+uNfnjWkX+YFQfivvW24TjaJG6ahvTrfw1auq7KlC7osuGcZBIWGBvB9UcENjH6JnLVhMqlRripk1dSHjAUA==
 
-date-fns@^2.16.1, date-fns@^2.21.1:
+date-fns@^2.16.1:
   version "2.23.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.23.0.tgz#4e886c941659af0cf7b30fafdd1eaa37e88788a9"
   integrity sha512-5ycpauovVyAk0kXNZz6ZoB9AYMZB4DObse7P3BPWmyEjXNORTI8EJ6X0uaSAq4sCHzM1uajzrkr6HnsLQpxGXA==
@@ -8391,7 +8330,7 @@ dedent@^0.7.0:
   resolved "https://registry.yarnpkg.com/dedent/-/dedent-0.7.0.tgz#2495ddbaf6eb874abb0e1be9df22d2e5a544326c"
   integrity sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=
 
-deep-equal@^1.0.1, deep-equal@^1.1.0:
+deep-equal@^1.0.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.1.1.tgz#b5c98c942ceffaf7cb051e24e1434a25a2e6076a"
   integrity sha512-yd9c5AdiqVcR+JjcwUQb9DkhJc8ngNr0MahEBGvDiJw8puWab2yZlh+nkasOnZP+EGTAP6rRp2JzJhJZzvNF8g==
@@ -10106,11 +10045,6 @@ forwarded@0.2.0:
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.2.0.tgz#2269936428aad4c15c7ebe9779a84bf0b2a81811"
   integrity sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==
 
-fp-ts@^2.10.0:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.11.1.tgz#b1eeb2540728b6328542664888442f8f805d2443"
-  integrity sha512-CJOfs+Heq/erkE5mqH2mhpsxCKABGmcLyeEwPxtbTlkLkItGUs6bmk2WqjB2SgoVwNwzTE5iKjPQJiq06CPs5g==
-
 fragment-cache@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
@@ -11476,23 +11410,6 @@ invariant@^2.0.0, invariant@^2.2.2:
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
   dependencies:
     loose-envify "^1.0.0"
-
-io-ts-promise@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/io-ts-promise/-/io-ts-promise-2.0.2.tgz#e034d10f269669c852887636f5bd1ce706bbc661"
-  integrity sha512-heFR4LRkdEgTCwTzH/YI7FL/18/oWVFipzdwBWOq7GZVM4oLK33HXITDkaTSFkmKTk9zcGGreHHhNxI8RY8jsg==
-  dependencies:
-    deep-equal "^1.1.0"
-
-io-ts-reporters@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/io-ts-reporters/-/io-ts-reporters-1.2.2.tgz#4d3219777ea5219c7d8f6ffac01fd68e72426dd1"
-  integrity sha512-igASwWWkDY757OutNcM6zTtdJf/eTZYkoe2ymsX2qpm5bKZLo74FJYjsCtMQOEdY7dRHLLEulCyFQwdN69GBCg==
-
-io-ts@^2.2.16:
-  version "2.2.16"
-  resolved "https://registry.yarnpkg.com/io-ts/-/io-ts-2.2.16.tgz#597dffa03db1913fc318c9c6df6931cb4ed808b2"
-  integrity sha512-y5TTSa6VP6le0hhmIyN0dqEXkrZeJLeC5KApJq6VLci3UEKF80lZ+KuoUs02RhBxNWlrqSNxzfI7otLX1Euv8Q==
 
 ip-regex@^2.1.0:
   version "2.1.0"
@@ -14249,11 +14166,6 @@ modify-values@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
-
-moment@^2.29.1:
-  version "2.29.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
-  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
 morgan@^1.10.0:
   version "1.10.0"
