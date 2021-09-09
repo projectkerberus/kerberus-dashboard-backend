@@ -14,6 +14,7 @@ import { ScmIntegrations } from '@backstage/integration';
 import {
   createArgoCDAction,
   createSonarCloudAction,
+  creategitHubProtectionAction,
 } from './scaffolder/actions';
 
 export default async function createPlugin({
@@ -42,6 +43,7 @@ export default async function createPlugin({
     ...builtInActions,
     createArgoCDAction(),
     createSonarCloudAction(),
+    creategitHubProtectionAction(),
   ];
 
   return await createRouter({

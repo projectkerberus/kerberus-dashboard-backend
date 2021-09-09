@@ -52,7 +52,7 @@ export const createSonarCloudAction = () => {
         `${owner}/${repo}|${ghRepo.data.id}`,
       );
       configData.append('organization', `${owner}`);
-      const createRepo = await axiosInstance.post(
+      await axiosInstance.post(
         'https://sonarcloud.io/api/alm_integration/provision_projects',
         configData,
         config,
