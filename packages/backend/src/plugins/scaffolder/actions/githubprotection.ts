@@ -31,7 +31,7 @@ export const creategitHubProtectionAction = () => {
         },
       };
 
-      ctx.logger.info(JSON.stringify(config, null, 2));
+      // ctx.logger.info(JSON.stringify(config, null, 2));
 
       const fullUrl = `https://${ctx.input.host.substring(1)}`;
       const url = new URL(fullUrl);
