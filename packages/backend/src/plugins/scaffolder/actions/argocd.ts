@@ -15,6 +15,11 @@ export const createArgoCDAction = () => {
             title: 'Host',
             description: 'Host',
           },
+          pathRepoSubfolder: {
+            type: 'bool',
+            title: 'Path Repo Subfolder',
+            description: 'Path Repo Subfolder',
+          },
         },
       },
     },
@@ -38,7 +43,9 @@ export const createArgoCDAction = () => {
         spec: {
           source: {
             repoURL: `${base}/${owner}/${repo}.git`,
-            path: 'charts/',
+            path: `charts/${
+              ctx.input.pathRepoSubfolder === 'true' ? `${repo}/` : ''
+            }`,
           },
           destination: {
             namespace: repo,
