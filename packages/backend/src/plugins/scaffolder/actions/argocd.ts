@@ -30,6 +30,10 @@ export const createArgoCDAction = () => {
         }),
       });
 
+      ctx.logger.info(`Waiting for repository creation`);
+      await delay(7000);
+      ctx.logger.info(`We assume it was created`);
+
       const fullUrl = `https://${ctx.input.host.substring(1)}`;
       const url = new URL(fullUrl);
       const owner = url.searchParams.get('owner');
@@ -79,3 +83,7 @@ export const createArgoCDAction = () => {
     },
   });
 };
+
+function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
