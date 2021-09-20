@@ -24,7 +24,9 @@ export const createSonarCloudAction = () => {
           rejectUnauthorized: false,
         }),
       });
-      const sonarToken = Buffer.from(`${process.env.SONARQUBE_AUTH}`, 'base64');
+      const sonarToken = Buffer.from(`${process.env.SONARQUBE_AUTH}`).toString(
+        'base64',
+      );
       const config = {
         headers: {
           'content-type': 'application/x-www-form-urlencoded',
