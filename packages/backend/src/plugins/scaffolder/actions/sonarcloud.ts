@@ -1,7 +1,6 @@
 import { createTemplateAction } from '@backstage/plugin-scaffolder-backend';
 import axios from 'axios';
 import * as https from 'https';
-import FormData from 'form-data';
 
 export const createSonarCloudAction = () => {
   return createTemplateAction<{}>({
@@ -25,10 +24,11 @@ export const createSonarCloudAction = () => {
           rejectUnauthorized: false,
         }),
       });
+      const sonarToken = Buffer.from(`${process.env.SONARQUBE_AUTH}`, 'base64');
       const config = {
         headers: {
           'content-type': 'application/x-www-form-urlencoded',
-          Authorization: `Basic ${process.env.SONARQUBE_AUTH}`,
+          Authorization: `Basic ${sonarToken}`,
         },
       };
 
