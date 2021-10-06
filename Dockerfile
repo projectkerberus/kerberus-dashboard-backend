@@ -6,7 +6,6 @@ RUN yarn
 RUN yarn build
 
 FROM node:14-buster
-# (workaround) Install cookiecutter and mkdocs to avoid the need to run docker in docker
 WORKDIR /usr/src/app
 RUN cd /tmp && curl -O https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz && \
     tar -xvf Python-3.8.2.tar.xz && \
