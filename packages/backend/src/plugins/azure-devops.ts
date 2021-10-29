@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-import { createRouter } from '@backstage/plugin-auth-backend';
+import { createRouter } from '@backstage/plugin-azure-devops-backend';
 import { Router } from 'express';
-import { PluginEnvironment } from '../types';
+import type { PluginEnvironment } from '../types';
 
-export default async function createPlugin({
+export default function createPlugin({
   logger,
-  database,
   config,
-  discovery,
 }: PluginEnvironment): Promise<Router> {
-  return await createRouter({ logger, config, database, discovery });
+  return createRouter({ logger, config });
 }

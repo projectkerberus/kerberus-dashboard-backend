@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 The Backstage Authors
+ * Copyright 2020 Spotify AB
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,26 @@
  * limitations under the License.
  */
 
-import { createRouter } from '@backstage/plugin-auth-backend';
+import {
+  createRouter,
+  DefaultJenkinsInfoProvider,
+} from '@backstage/plugin-jenkins-backend';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
+import { CatalogClient } from '@backstage/catalog-client';
 
 export default async function createPlugin({
   logger,
-  database,
   config,
   discovery,
 }: PluginEnvironment): Promise<Router> {
-  return await createRouter({ logger, config, database, discovery });
+  const catalog = new CatalogClient({ discoveryApi: discovery });
+
+  return await createRouter({
+    logger,
+    jenkinsInfoProvider: DefaultJenkinsInfoProvider.fromConfig({
+      catalog,
+      config,
+    }),
+  });
 }

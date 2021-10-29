@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-import { createRouter } from '@backstage/plugin-auth-backend';
-import { Router } from 'express';
+import { createRouter } from '@backstage/plugin-code-coverage-backend';
 import { PluginEnvironment } from '../types';
 
-export default async function createPlugin({
-  logger,
-  database,
-  config,
-  discovery,
-}: PluginEnvironment): Promise<Router> {
-  return await createRouter({ logger, config, database, discovery });
+export default async function createPlugin(env: PluginEnvironment) {
+  return await createRouter({
+    config: env.config,
+    discovery: env.discovery,
+    database: env.database,
+    urlReader: env.reader,
+    logger: env.logger,
+  });
 }

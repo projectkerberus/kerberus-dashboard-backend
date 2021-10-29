@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 The Backstage Authors
+ * Copyright 2021 The Backstage Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,19 @@
  * limitations under the License.
  */
 
-import { createRouter } from '@backstage/plugin-auth-backend';
-import { Router } from 'express';
+import {
+  createRouter,
+  createDefaultBadgeFactories,
+} from '@backstage/plugin-badges-backend';
 import { PluginEnvironment } from '../types';
 
 export default async function createPlugin({
-  logger,
-  database,
   config,
   discovery,
-}: PluginEnvironment): Promise<Router> {
-  return await createRouter({ logger, config, database, discovery });
+}: PluginEnvironment) {
+  return await createRouter({
+    config,
+    discovery,
+    badgeFactories: createDefaultBadgeFactories(),
+  });
 }

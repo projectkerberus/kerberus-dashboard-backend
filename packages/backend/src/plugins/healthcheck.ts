@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-import { createRouter } from '@backstage/plugin-auth-backend';
+import { createStatusCheckRouter } from '@backstage/backend-common';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
 
-export default async function createPlugin({
+export default async function createRouter({
   logger,
-  database,
-  config,
-  discovery,
 }: PluginEnvironment): Promise<Router> {
-  return await createRouter({ logger, config, database, discovery });
+  return await createStatusCheckRouter({ logger, path: '/healthcheck' });
 }
