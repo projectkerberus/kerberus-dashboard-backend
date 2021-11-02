@@ -3,6 +3,8 @@ __app-config.yaml
 todo.txt
 .dccache
 todo.txt
+packages/backend/package-lock.json
+___packages
 
 # macOS
 .DS_Store
